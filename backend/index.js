@@ -128,37 +128,6 @@ app.post('/login', async (req, res) => {
     }
 });
 
-
-// // Add to Cart Route
-// app.post('/addtocart', fetchUser, async (req, res) => {
-//     try {
-//         let user = await User.findById(req.user.id);
-//         if (!user) return res.status(404).send({ errors: 'User not found' });
-
-//         const { itemId, quantity } = req.body;
-//         user.cartData[itemId] = (user.cartData[itemId] || 0) + quantity;
-
-//         await user.save();
-//         res.json({ success: true, cartData: user.cartData });
-//     } catch (error) {
-//         console.error('Error adding to cart:', error.message);
-//         res.status(500).json({ success: false, error: error.message });
-//     }
-// });
-
-// // Get Cart Data Route
-// app.post('/getcart', fetchUser, async (req, res) => {
-//     try {
-//         let user = await User.findById(req.user.id);
-//         if (!user) return res.status(404).send({ errors: 'User not found' });
-
-//         res.json(user.cartData);
-//     } catch (error) {
-//         console.error('Error getting cart data:', error.message);
-//         res.status(500).json({ success: false, error: error.message });
-//     }
-// });
-
 // Logout Route
 app.post('/logout', fetchUser, async (req, res) => {
     try {

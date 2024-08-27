@@ -49,7 +49,7 @@ const LoginSignup = () => {
     setLoading(true); // Show loading indicator
 
     try {
-      const response = await fetch(`http://localhost:4000/${endpoint}`, {
+      const response = await fetch(`https://ecomart-1-sjgs.onrender.com/${endpoint}`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
