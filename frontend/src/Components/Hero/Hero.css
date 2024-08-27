@@ -1,0 +1,132 @@
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.heroo {
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Adding a gradient overlay */
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.hero-left, .hero-right {
+  padding: 1rem;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white; /* Ensure text is white to stand out against video */
+}
+
+.hero-left h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: rgb(206, 206, 206);
+}
+
+.hero-left h4 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #bebebe; /* Gold color for emphasis */
+}
+
+.hero-latest-button {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.hero-right img {
+  width: 70%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-left h4,
+.hero-left h1 {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.hero-right img {
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+  animation-delay: 1s;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 5rem;
+  }
+
+  .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-left h4 {
+    font-size: 1.5rem;
+  }
+
+  .hero-latest-button button {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-left h1 {
+    font-size: 3rem;
+  }
+
+  .hero-left h4 {
+    font-size: 1.75rem;
+  }
+
+  .hero-latest-button button {
+    padding: 0.7rem 1.8rem;
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,15 @@
+.new-collections {
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .new-collections h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .new-collections hr {
+    margin-bottom: 20px;
+  }
+  

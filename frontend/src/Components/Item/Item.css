@@ -1,0 +1,112 @@
+.items-container {
+  display: flex;
+  flex-wrap: wrap; /* Negative margin to offset the padding of the cards */
+}
+
+.item {
+  flex: 1 1 calc(25% - 16px); /* Adjusted width of each card */
+  margin: 8px; /* Increased margin for a better gap */
+  box-sizing: border-box; /* Ensures padding and border are included in width */
+  border: 1px solid #ddd;
+  padding: 12px; /* Reduced padding to make the card smaller */
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Added transition for smooth effect */
+}
+
+/* Animation for when the item becomes visible */
+.item-visited {
+  animation: fadeInUp 1s ease-in-out forwards; /* Updated to fadeInUp effect */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+.item:hover {
+  transform: scale(1.05); /* Slightly enlarges item on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add deeper shadow on hover */
+  background-color: #f9f9f9; /* Slightly changes background color on hover */
+}
+
+.item-image {
+  max-width: 100%;
+  border-radius: 8px;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease; /* Transition for smooth hover effect */
+}
+
+.item-name {
+  font-size: 14px; /* Adjusted font size */
+  margin: 8px 0;
+}
+
+.item-prices {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap; /* Ensures that prices wrap on smaller screens */
+}
+
+.item-price-new {
+  color: green;
+  font-weight: bold;
+}
+
+.item-price-old {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .item {
+    flex: 1 1 calc(25% - 16px); /* 4 items per row */
+    padding: 10px; /* Adjust padding for medium screens */
+    margin-bottom: 2rem;
+  }
+
+  .item-name {
+    font-size: 12px; /* Adjust font size for medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .item {
+    flex: 1 1 calc(50% - 16px); /* 2 items per row */
+    padding: 8px; /* Adjust padding for small screens */
+  }
+
+  .item-name {
+    font-size: 11px; /* Adjust font size for small screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .item {
+    flex: 1 1 100%; /* 1 item per row */
+    padding: 6px; /* Adjust padding for very small screens */
+    margin: auto;
+    margin-bottom: 2rem;
+    box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
+  }
+
+  .item-name {
+    font-size: 15px; /* Adjust font size for very small screens */
+  }
+
+  .item img {
+    width: 100%; /* Make sure the image takes full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below the image */
+  }
+}

@@ -1,0 +1,14 @@
+.popular {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.popular h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.popular hr {
+  margin-bottom: 20px;
+}

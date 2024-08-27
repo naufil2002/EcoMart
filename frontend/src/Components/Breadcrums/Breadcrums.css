@@ -1,0 +1,33 @@
+.breadcrums {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #333;
+}
+
+.breadcrums span {
+    margin: 0 4px;
+    white-space: nowrap;
+}
+
+.arrow-icon {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+}
+
+@media (max-width: 768px) {
+    .breadcrums {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .breadcrums {
+        font-size: 12px;
+    }
+
+    .arrow-icon {
+        width: 10px;
+        height: 10px;
+    }
+}

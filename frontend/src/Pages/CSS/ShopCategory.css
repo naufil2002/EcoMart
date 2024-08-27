@@ -1,0 +1,155 @@
+/* ShopCategory.css */
+
+.shop-category {
+    position: relative; /* Ensure positioning context for overlay */
+    /* padding: 16px; */
+}
+
+.shop-category img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.shopcategory-indexSort {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.shopcategory-indexSort img {
+    width: 20%;
+    height: 22%;
+}
+
+.shopcategory-products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default to four columns */
+    gap: 16px;
+}
+
+.shop-category .banner-image {
+    width: 100%;
+    height: 50vh; /* 50% of the viewport height */
+}
+
+.banner-video {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .shop-category .banner-image {
+        height: 35vh; /* Slightly smaller height for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .shop-category .banner-image {
+        height: 20vh; /* Even smaller height for mobile devices */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .shopcategory-products {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .shopcategory-products {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for small screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .shopcategory-products {
+        grid-template-columns: 1fr; /* One column for very small screens */
+    }
+}
+
+.shopcategory-products .item {
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.item-image {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+}
+
+.item-name {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.item-prices {
+    display: flex;
+    gap: 8px;
+}
+
+.item-price-new {
+    color: green;
+    font-weight: bold;
+}
+
+.item-price-old {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Animation for banner overlay and text */
+.banner-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for better text contrast */
+    opacity: 0; /* Hide overlay by default */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in transition */
+}
+
+.banner-container.loaded .banner-overlay {
+    opacity: 1; /* Show overlay when loaded */
+}
+
+.banner-text {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transform: translateY(20px); /* Start slightly below */
+    opacity: 0; /* Start hidden */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.banner-container.loaded .banner-text {
+    transform: translateY(0); /* Move to final position */
+    opacity: 1; /* Fully visible text */
+}
+
+.banner-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.banner-text p {
+    font-size: 1.25rem;
+}
