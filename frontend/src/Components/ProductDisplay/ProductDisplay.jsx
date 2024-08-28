@@ -48,7 +48,27 @@ export const ProductDisplay = (props) => {
                     <div>XXL</div>
                 </div>
             </div>
-            <button className='mt-3 mb-3' onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
+            <button
+  className='mt-3 mb-3'
+  onClick={(e) => {
+    e.preventDefault();  // Prevent default behavior
+    e.stopPropagation(); // Prevent event bubbling
+
+    addToCart(product.id);  // Add to cart
+
+    // Preserve scroll position
+    const currentScrollPosition = window.scrollY;
+    setTimeout(() => {
+      window.scrollTo({
+        top: currentScrollPosition,
+        behavior: 'smooth'
+      });
+    }, 0);
+  }}
+>
+  ADD TO CART
+</button>
+
             <p className='productdisplay-right-category'><span>Category : </span>Women , T-Shirt, Crop Top</p>
             <p className='productdisplay-right-category'><span>Tags : </span>Modern , T-Latest</p>
         </div>
